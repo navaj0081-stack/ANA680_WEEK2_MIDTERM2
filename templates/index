@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Demographics Prediction Tool</title>
+</head>
+<body>
+    <h2>Predict Student Race/Ethnicity/</h2>
+
+    <form action="/predict" method="post">
+            <label>Math Score (0-100):</label><br>
+            <input type="number" min="0" max="100" name="math_score" required><br><br>
+
+
+            <label>Reading Score (0-100):</label><br>
+            <input type="number" min="0" max="10" name="reading_score" required><br><br>
+
+            <label>Writing Score (0-100):</label><br>
+            <input type="number" min="0" max="100" name="writing_score" required><br><br>
+
+
+            <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+
+</body>
+</html>
